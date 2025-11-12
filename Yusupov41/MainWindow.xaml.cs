@@ -23,7 +23,7 @@ namespace Yusupov41
         public MainWindow()
         {
             InitializeComponent();
-            MainFrame.Navigate(new ServicePage());
+            MainFrame.Navigate(new ProductPage());
             Manager.MainFrame = MainFrame;
         }
 

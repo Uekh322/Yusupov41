@@ -12,20 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Yusupov41;
 
 namespace Yusupov41
 {
     /// <summary>
-    /// Логика взаимодействия для ServicePage.xaml
+    /// Логика взаимодействия для AddEditPage.xaml
     /// </summary>
-    public partial class ServicePage : Page
+    public partial class AddEditPage : Page
     {
-        public ServicePage()
+        public AddEditPage()
         {
             InitializeComponent();
-
-
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -38,16 +35,14 @@ namespace Yusupov41
             UpdateServices();
         }
 
-
-
         private void TBoxSearch_TextChanged(object sender, TextChangedEventArgs e)
         {
             UpdateServices();
         }
+
         private void UpdateServices()
         {
-
-
+            // Здесь будет ваша логика обновления услуг
         }
     }
 }

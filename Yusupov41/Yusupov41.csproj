@@ -35,8 +35,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -55,6 +64,39 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Order.cs">
+      <DependentUpon>YusupovBD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrderProduct.cs">
+      <DependentUpon>YusupovBD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PickUpPoint.cs">
+      <DependentUpon>YusupovBD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Product.cs">
+      <DependentUpon>YusupovBD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Role.cs">
+      <DependentUpon>YusupovBD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="User.cs">
+      <DependentUpon>YusupovBD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="YusupovBD.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>YusupovBD.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="YusupovBD.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>YusupovBD.tt</DependentUpon>
+    </Compile>
+    <Compile Include="YusupovBD.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>YusupovBD.edmx</DependentUpon>
+    </Compile>
     <Page Include="AddEditPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -101,19 +143,51 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <EntityDeploy Include="YusupovBD.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>YusupovBD.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="YusupovBD.edmx.diagram">
+      <DependentUpon>YusupovBD.edmx</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Image_produc\B320R5.jpg" />
+    <Resource Include="Image_produc\D329H3.jpg" />
+    <Resource Include="Image_produc\D572U8.jpg" />
+    <Resource Include="Image_produc\F572H7.jpg" />
+    <Resource Include="Image_produc\F635R4.jpg" />
+    <Resource Include="Image_produc\G432E4.jpg" />
+    <Resource Include="Image_produc\G783F5.jpg" />
+    <Resource Include="Image_produc\H782T5.jpg" />
+    <Resource Include="Image_produc\J384T6.jpg" />
+    <Resource Include="Image_produc\А112Т4.jpg" />
+    <Content Include="YusupovBD.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>YusupovBD.Context.cs</LastGenOutput>
+      <DependentUpon>YusupovBD.edmx</DependentUpon>
+    </Content>
+    <Content Include="YusupovBD.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>YusupovBD.edmx</DependentUpon>
+      <LastGenOutput>YusupovBD.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
   <ItemGroup>
     <Resource Include="image\icon.ico" />
     <Resource Include="image\logo.png" />
     <Resource Include="image\picture.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -22,12 +22,10 @@ namespace Yusupov41
     {
         public ProductPage()
         {
-            InitializeComponent();
-        }
+            InitializeComponent(); 
 
-        private void InitializeComponent()
-        {
-            throw new NotImplementedException();
+            var currentProducts = Yusupov41Entities.GetContext().Product.ToList();
+            ProductListView.ItemsSource = currentProducts;
         }
     }
 }
