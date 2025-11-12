@@ -79,6 +79,9 @@
     <Compile Include="Role.cs">
       <DependentUpon>YusupovBD.tt</DependentUpon>
     </Compile>
+    <Compile Include="sysdiagrams.cs">
+      <DependentUpon>YusupovBD.tt</DependentUpon>
+    </Compile>
     <Compile Include="User.cs">
       <DependentUpon>YusupovBD.tt</DependentUpon>
     </Compile>
@@ -170,16 +173,6 @@
     <Resource Include="Image_produc\H782T5.jpg" />
     <Resource Include="Image_produc\J384T6.jpg" />
     <Resource Include="Image_produc\А112Т4.jpg" />
-    <Content Include="YusupovBD.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>YusupovBD.Context.cs</LastGenOutput>
-      <DependentUpon>YusupovBD.edmx</DependentUpon>
-    </Content>
-    <Content Include="YusupovBD.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>YusupovBD.edmx</DependentUpon>
-      <LastGenOutput>YusupovBD.cs</LastGenOutput>
-    </Content>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="image\icon.ico" />
@@ -188,6 +181,18 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="YusupovBD.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>YusupovBD.edmx</DependentUpon>
+      <LastGenOutput>YusupovBD.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="YusupovBD.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>YusupovBD.edmx</DependentUpon>
+      <LastGenOutput>YusupovBD.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

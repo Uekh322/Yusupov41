@@ -10,10 +10,40 @@
 
     <Grid>
         <Grid.RowDefinitions>
-
-
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
         </Grid.RowDefinitions>
-        <ListView Name="ProductListView">
+        <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <StackPanel Margin="10" Orientation="Horizontal">
+                <TextBlock Text="Введите название для поиска " TextAlignment="Right"
+                Width="300" FontSize="20"></TextBlock>
+                <TextBox Name="TBoxSearch" TextChanged="TBoxSearch_TextChanged"
+                Width="300" FontSize="15"></TextBox>
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Margin="10">
+                <TextBlock Text=" фильтрация по скидке " TextAlignment="Right"
+                Width="300" FontSize="20"></TextBlock>
+                <ComboBox Name="ComboType" SelectionChanged="ComboType_SelectionChanged"
+               FontSize="15" Width="200">
+                    <TextBlock>Все</TextBlock>
+                    <TextBlock>от 0 до 9,99%</TextBlock>
+                    <TextBlock>от 10 до 14,99%</TextBlock>
+                    <TextBlock>от 15 и более</TextBlock>
+                </ComboBox>
+            </StackPanel>
+        </WrapPanel>
+        <StackPanel Grid.Row="1" Orientation="Vertical" Margin="5">
+            <RadioButton Content="По возрастанию стоимости" GroupName="Sort"
+              Width="300" FontSize="20" Checked="RButtonUp_Checked"
+              Name="RButtonUp"></RadioButton>
+            <RadioButton Content="По убыванию стоимости" GroupName="Sort"
+              Width="300" FontSize="20" Checked="RButtonDown_Checked"
+              Name="RButtonDown"></RadioButton>
+        </StackPanel>
+        <ListView Name="ProductListView" Grid.Row="2">
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Grid>
@@ -28,7 +58,7 @@
                             <RowDefinition Height="*"/>
                             <RowDefinition Height="*"/>
                         </Grid.RowDefinitions>
-                        <Image Width="200" Grid.Column="0" Grid.RowSpan="4" Stretch="UniformToFill" HorizontalAlignment="Center">
+                        <Image Width="300" Grid.Column="0" Grid.RowSpan="4" Stretch="UniformToFill" HorizontalAlignment="Center">
                             <Image.Source>
                                 <Binding Path="ProducPhotoPath">
                                     <Binding.TargetNullValue>
@@ -49,5 +79,8 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+        <TextBlock Name="TBlockRecordCount" Grid.Row="1" HorizontalAlignment="Left" 
+                   FontSize="16" Margin="10" FontWeight="Bold"
+                   Text="Записей: 0 из 0"/>
     </Grid>
 </Page>

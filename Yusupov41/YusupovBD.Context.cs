@@ -15,11 +15,12 @@ namespace Yusupov41
     
     public partial class Yusupov41Entities : DbContext
     {
+
         private static Yusupov41Entities _context;
 
         public static Yusupov41Entities GetContext()
         {
-            if ( _context == null )
+            if (_context == null)
                 _context = new Yusupov41Entities();
 
             return _context;
@@ -39,6 +40,7 @@ namespace Yusupov41
         public virtual DbSet<PickUpPoint> PickUpPoint { get; set; }
         public virtual DbSet<Product> Product { get; set; }
         public virtual DbSet<Role> Role { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<User> User { get; set; }
     }
 }

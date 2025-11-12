@@ -11,7 +11,7 @@ namespace Yusupov41
 {
     using System;
     using System.Collections.Generic;
-    
+
     public partial class Product
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -19,7 +19,7 @@ namespace Yusupov41
         {
             this.OrderProduct = new HashSet<OrderProduct>();
         }
-    
+
         public string ProductArticleNumber { get; set; }
         public string ProductName { get; set; }
         public string ProductUnit { get; set; }
@@ -32,15 +32,17 @@ namespace Yusupov41
         public Nullable<int> ProductQuantityInStock { get; set; }
         public string ProductDescription { get; set; }
         public string ProductPhoto { get; set; }
-        
-        public string ProducPhotoPath { get
+
+        public string ProducPhotoPath
+        {
+            get
             {
                 if (string.IsNullOrEmpty(ProductPhoto)) return null;
                 return "Image_produc/" + ProductPhoto;
 
             }
         }
-    
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OrderProduct> OrderProduct { get; set; }
     }
