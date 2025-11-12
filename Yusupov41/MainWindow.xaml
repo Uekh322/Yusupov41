@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Yusupov41"
         mc:Ignorable="d"
-        Title="Юсупов" Height="450" Width="800" FontFamily="Comic Sans MS" Icon="image\icon.ico">
+        Title="Юсупов" Height="800" Width="1400" FontFamily="Comic Sans MS" Icon="image\icon.ico">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="75"/>
