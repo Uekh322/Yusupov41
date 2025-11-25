@@ -15,7 +15,17 @@
             <RowDefinition Height="*"></RowDefinition>
             <RowDefinition Height="auto"></RowDefinition>
         </Grid.RowDefinitions>
-        <WrapPanel Orientation="Horizontal" HorizontalAlignment="Center">
+        <StackPanel Orientation="Vertical"  HorizontalAlignment="Left" Grid.Row="0">
+            <StackPanel Orientation="Horizontal">
+                <TextBlock Text="Вы авторизованы как " Height="30" Margin="10" FontSize="15"/>
+                <TextBlock Width="350" Height="30" Margin="10" FontSize="15" Name="FIOTB" HorizontalAlignment="Left"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Grid.Row="0">
+                <TextBlock Text="Роль:  " Height="30" Margin="10" FontSize="15"/>
+                <TextBlock Width="200" Height="30" Margin="10" FontSize="15" Name="RoleTB" HorizontalAlignment="Left"/>
+            </StackPanel>
+        </StackPanel>
+        <WrapPanel Orientation="Vertical" HorizontalAlignment="Center" Grid.Row="1">
             <StackPanel Margin="10" Orientation="Horizontal">
                 <TextBlock Text="Введите название для поиска " TextAlignment="Right"
                 Width="300" FontSize="20"></TextBlock>
@@ -23,7 +33,7 @@
                 Width="300" FontSize="15"></TextBox>
             </StackPanel>
 
-            <StackPanel Orientation="Horizontal" Margin="10">
+            <StackPanel Orientation="Horizontal" Margin="10" Grid.Row="1">
                 <TextBlock Text=" фильтрация по скидке " TextAlignment="Right"
                 Width="300" FontSize="20"></TextBlock>
                 <ComboBox Name="ComboType" SelectionChanged="ComboType_SelectionChanged"
@@ -35,7 +45,7 @@
                 </ComboBox>
             </StackPanel>
         </WrapPanel>
-        <StackPanel Grid.Row="1" Orientation="Vertical" Margin="5">
+        <StackPanel Grid.Row="1" Orientation="Vertical" HorizontalAlignment="Right" Margin="5">
             <RadioButton Content="По возрастанию стоимости" GroupName="Sort"
               Width="300" FontSize="20" Checked="RButtonUp_Checked"
               Name="RButtonUp"></RadioButton>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.SqlServer.Server;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,11 +21,28 @@ namespace Yusupov41
     /// </summary>
     public partial class ProductPage : Page
     {
-        public ProductPage()
+        public ProductPage(User user)
         {
             InitializeComponent();
-
-            var currentProducts = Yusupov41Entities.GetContext().Product.ToList();
+            if (user == null)
+            {
+                FIOTB.Text = "Гость";
+                RoleTB.Text = "Гость";
+            }
+            else
+            {
+                FIOTB.Text = user.UserSurname + " " + user.UserName + " " + user.UserPatronymic;
+                switch (user.UserRole)
+                {
+                    case 1:
+                        RoleTB.Text = "Клиент"; break;
+                    case 2:
+                        RoleTB.Text = "Менджер"; break;
+                    case 3:
+                        RoleTB.Text = "Администратор"; break;
+                }
+            }
+                var currentProducts = Yusupov41Entities.GetContext().Product.ToList();
             ProductListView.ItemsSource = currentProducts;
 
             ComboType.SelectedIndex = 0;
@@ -68,7 +86,7 @@ namespace Yusupov41
 
             if (ComboType.SelectedIndex == 2)
             {
-                currentServices = currentServices.Where(p => (Convert.ToInt32(p.ProductDiscountAmount) >= 5 && Convert.ToInt32(p.ProductDiscountAmount) < 14.99)).ToList();
+                currentServices = currentServices.Where(p => (Convert.ToInt32(p.ProductDiscountAmount) >= 10 && Convert.ToInt32(p.ProductDiscountAmount) < 14.99)).ToList();
             }
             if (ComboType.SelectedIndex == 3)
             {
