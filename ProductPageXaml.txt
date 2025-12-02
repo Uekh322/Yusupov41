@@ -1,4 +1,4 @@
-﻿using Microsoft.SqlServer.Server;
+using Microsoft.SqlServer.Server;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -157,14 +157,8 @@ namespace Yusupov41
 
             selectedProducts = selectedProducts.Distinct().ToList();
 
-            var orderProductsCopy = new List<OrderProduct>(selectedOrderProducts);
-            var productsCopy = new List<Product>(selectedProducts);
-
-            OrderWindow orderWindow = new OrderWindow(orderProductsCopy, productsCopy, FIOTB.Text, currentUser);
-            orderWindow.ShowDialog();
-            selectedProducts.Clear();
-            selectedOrderProducts.Clear();
-            OrderBTn.Visibility = Visibility.Collapsed;
+            OrderWindow orderWindow = new OrderWindow(selectedOrderProducts, selectedProducts, FIOTB.Text, currentUser);
+            orderWindow.Show();
 
         }
     }

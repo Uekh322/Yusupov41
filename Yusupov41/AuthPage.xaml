@@ -6,11 +6,10 @@
       xmlns:local="clr-namespace:Yusupov41"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="AuthPage">
+      Title="AuthPage" FontFamily="Comic Sans MS">
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
@@ -47,7 +46,6 @@
                  HorizontalAlignment="Stretch"
                  Margin="10"/>
 
-        <!-- Капча -->
         <StackPanel Grid.Row="2" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Name="CaptchaPanel" Visibility="Collapsed">
             <TextBlock Name="captchaOneWord" FontSize="22" Margin="30,0,0,0" Foreground="Black"></TextBlock>
             <TextBlock Name="captchaTwoWord" FontSize="22" TextDecorations="Strikethrough" Foreground="Black" Margin="10,10,0,0"></TextBlock>

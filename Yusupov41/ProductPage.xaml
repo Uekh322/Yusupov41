@@ -54,6 +54,11 @@
               Name="RButtonDown"></RadioButton>
         </StackPanel>
         <ListView Name="ProductListView" Grid.Row="2">
+            <ListView.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="Добавить к заказу" Click="MenuItem_Click"></MenuItem>
+                </ContextMenu>
+            </ListView.ContextMenu>
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <Grid>
@@ -92,5 +97,8 @@
         <TextBlock Name="TBlockRecordCount" Grid.Row="1" HorizontalAlignment="Left" 
                    FontSize="16" Margin="10" FontWeight="Bold"
                    Text="Записей: 0 из 0"/>
+        <Button Grid.Row="3" Content="Просмотреть заказ" Name="OrderBTn" 
+        Click="OrderBTn_Click" HorizontalAlignment="Right" 
+        Margin="10" Width="150" Visibility="Collapsed" FontSize="14"/>
     </Grid>
 </Page>
